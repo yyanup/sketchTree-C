@@ -1,0 +1,25 @@
+file,name,genus,phylum
+lambda.fna,Escherichia phage Lambda,Lambdavirus,Uroviricota
+sars2.fna,SARS-CoV-2,Betacoronavirus,Pisuviricota
+hiv1.fna,HIV-1,Lentivirus,Artverviricota
+hbv.fna,Hepatitis B virus,Orthohepadnavirus,Artverviricota
+ebola.fna,Zaire ebolavirus,Orthoebolavirus,Negarnaviricota
+zika.fna,Zika virus,Orthoflavivirus,Kitrinoviricota
+human_mt.fna,Homo sapiens mitochondrion,Homo,Chordata
+chimp_mt.fna,Pan troglodytes mitochondrion,Pan,Chordata
+gorilla_mt.fna,Gorilla gorilla mitochondrion,Gorilla,Chordata
+mouse_mt.fna,Mus musculus mitochondrion,Mus,Chordata
+zebrafish_mt.fna,Danio rerio mitochondrion,Danio,Chordata
+yeast_mt.fna,Saccharomyces cerevisiae mitochondrion,Saccharomyces,Ascomycota
+mgen.fna,Mycoplasma genitalium,Mycoplasma,Mycoplasmatota
+ecoli.fna,Escherichia coli K-12,Escherichia,Pseudomonadota
+shigella.fna,Shigella flexneri 2a 301,Shigella,Pseudomonadota
+salmonella.fna,Salmonella enterica LT2,Salmonella,Pseudomonadota
+bsub.fna,Bacillus subtilis 168,Bacillus,Bacillota
+banthracis.fna,Bacillus anthracis Ames,Bacillus,Bacillota
+saureus.fna,Staphylococcus aureus NCTC 8325,Staphylococcus,Bacillota
+mtb.fna,Mycobacterium tuberculosis H37Rv,Mycobacterium,Actinomycetota
+paeruginosa.fna,Pseudomonas aeruginosa PAO1,Pseudomonas,Pseudomonadota
+hpylori.fna,Helicobacter pylori 26695,Helicobacter,Campylobacterota
+scoelicolor.fna,Streptomyces coelicolor A3(2),Streptomyces,Actinomycetota
+mjannaschii.fna,Methanocaldococcus jannaschii,Methanocaldococcus,Euryarchaeota
