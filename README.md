@@ -273,8 +273,38 @@ SketchTree-C/
 
 ## Results
 
-<!-- Add after the final run: ![UPGMA tree](docs/tree.png) -->
+![UPGMA tree of 24 genomes (k=21, s=10000), coloured by phylum](docs/tree.png)
+Tree built from the distance matrix at `k = 21`, `s = 10000`. Colours show phylum.
 
+### Settings compared
+
+| Setting | What happened |
+|---|---|
+| `k=21, s=1000` | Clean, but most moderate relatives collapse to distance 1 |
+| `k=15, s=10000` | Resolves more pairs, but unrelated genomes get chance matches (distances 0.2 to 0.57) |
+| `k=21, s=10000` | Used for the figure: no chance matches, finer values |
+
+### Selected distances (`k=21, s=10000`)
+
+| Pair | Distance |
+|---|---|
+| *E. coli* and *Shigella* | 0.020 |
+| *E. coli* and *Salmonella* | 0.162 |
+| Human and chimpanzee mitochondria | 0.075 |
+| Human and gorilla mitochondria | 0.088 |
+| Human and mouse mitochondria | 0.211 |
+| Human and zebrafish mitochondria | 0.258 |
+| Any other virus and any other genome | 1.000 |
+
+### What the tree shows
+
+- Close relatives group correctly: the primate mitochondria, with mouse and zebrafish further out, and *E. coli*, *Shigella* and *Salmonella*.
+- Genomes with nothing in common sit alone on long branches (the viruses and *M. genitalium*).
+- Joins at distances above about 0.3 rest on one to seven shared hashes out of 10,000 and are not evolutionary signal. Examples are *H. pylori* joining the Bacillota and *M. jannaschii* pairing with the yeast mitochondrion.
+
+### Benchmark
+
+*Accuracy against sketch size, runtime and memory will be added from `results/benchmark.csv`.*
 *To be filled in after the final run: tree screenshot, accuracy against sketch size, runtime and memory.*
 
 ## Reference
