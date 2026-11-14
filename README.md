@@ -304,8 +304,17 @@ Tree built from the distance matrix at `k = 21`, `s = 10000`. Colours show phylu
 
 ### Benchmark
 
-*Accuracy against sketch size, runtime and memory will be added from `results/benchmark.csv`.*
-*To be filled in after the final run: tree screenshot, accuracy against sketch size, runtime and memory.*
+24 genomes, 276 pairs. Sketch distance compared with exact distance (numbers from the benchmark in `results/benchmark.csv`).
+
+| k | s | Pearson r | MAE | Phylum nearest neighbour (max 16) |
+|---|---|---|---|---|
+| 15 | 100 / 1000 / 10000 | 0.630 / 0.762 / 0.835 | 0.321 / 0.250 / 0.135 | 9 / 11 / 12 |
+| 21 | 100 / 1000 / 10000 | 0.386 / 0.505 / 0.667 | 0.177 / 0.158 / 0.119 | 7 / 11 / 14 |
+| 27 | 100 / 1000 / 10000 | 0.299 / 0.499 / 0.624 | 0.176 / 0.148 / 0.119 | 5 / 8 / 12 |
+
+- Accuracy improves with sketch size at every k. Sketching all 24 genomes takes about 8.7 s in every setting.
+- Memory is 800 B, 8 KB and about 77 KB per sketch for s = 100, 1000 and 10000.
+- The best setting was k = 21, s = 10000 (14 of 16 possible phylum matches).
 
 ## Reference
 
