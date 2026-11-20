@@ -6,6 +6,9 @@
 #define MAX_GENOMES 256
 #define LINE_BUF    65536
 
+/* P3: benchmark, defined in bench.c */
+int run_bench(const char *datadir, const char *taxfile, const char *outfile);
+
 static void usage(void) {
     fprintf(stderr,
         "SketchTree-C: fast genome distances and trees using MinHash sketches\n\n"
@@ -14,11 +17,14 @@ static void usage(void) {
         "  sketchtree sketch <fasta> <k> <s> <out.sk>         build and save one sketch\n"
         "  sketchtree dist   <taxonomy.csv> <data_dir> <k> <s> <out.csv>\n"
         "                                                     distance matrix of all genomes\n"
-        "  sketchtree tree   <matrix.csv> <out.nwk>           UPGMA tree in Newick format\n\n"
+        "  sketchtree tree   <matrix.csv> <out.nwk>           UPGMA tree in Newick format\n"
+        "  sketchtree bench  <data_dir> <taxonomy.csv> <out.csv>\n"
+        "                                                     benchmark: sketch vs exact distances\n\n"
         "k = k-mer length (1..31), s = sketch size (e.g. 1000)\n\n"
         "Example:\n"
         "  sketchtree dist data/taxonomy.csv data 21 1000 results/dist_sketch.csv\n"
-        "  sketchtree tree results/dist_sketch.csv results/tree.nwk\n");
+        "  sketchtree tree results/dist_sketch.csv results/tree.nwk\n"
+        "  sketchtree bench data data/taxonomy.csv results/benchmark.csv\n");
 }
 
 /* ---------- small helpers ---------- */
@@ -309,6 +315,9 @@ int main(int argc, char **argv) {
     }
     if (strcmp(cmd, "tree") == 0 && argc == 4) {
         return cmd_tree(argv[2], argv[3]);
+    }
+    if (strcmp(cmd, "bench") == 0 && argc == 5) {
+        return run_bench(argv[2], argv[3], argv[4]);
     }
 
     usage();
